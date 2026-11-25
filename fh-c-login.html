@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>הפריסבי שלי</title>
+<style>
+@font-face{font-family:"EricaSansFOT";src:url(fonts/EricaSansFOT-Regular.ttf) format("truetype");font-weight:351 550;font-display:swap;unicode-range:U+0000-0024,U+0026-002F,U+003A-20A9,U+20AB-FFFF}
+@font-face{font-family:"EricaSansFOT";src:url(fonts/EricaSansFOT-Bold.ttf) format("truetype");font-weight:551 900;font-display:swap;unicode-range:U+0000-0024,U+0026-002F,U+003A-20A9,U+20AB-FFFF}
+/* login · phone + SMS code for freesbe customers, or continue as a guest (→ "אין כלום, רוצה להטעין") */
+:root{--tq:#00CDC8;--tq-d:#007a76;--ink:#0b0f10;--mut:#5b6668;--line:#e3eaea;--bg:#e8eeee;
+  --f:"EricaSansFOT",-apple-system,"SF Pro Text",system-ui,sans-serif;--num:-apple-system,"SF Pro Display",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px max(16px,env(safe-area-inset-left,0px)) 0}
+.ttl{font-size:15px;font-weight:700;margin-inline-end:auto}.ttl small{font-weight:500;color:var(--mut);margin-inline-start:8px;font-size:12.5px}
+.pchips{display:flex;gap:4px;padding:3px;border-radius:99px;background:rgba(127,140,142,.14)}
+.pchips a{font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;opacity:.75}
+.pchips a.on{background:#fff;opacity:1;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.stage{display:grid;place-items:center;padding:18px 16px 28px}
+.phone{width:390px;max-width:100%;aspect-ratio:390/844;border-radius:54px;background:#0b0f10;padding:11px;box-shadow:0 30px 60px -30px rgba(0,40,40,.45)}
+.screen{position:relative;height:100%;border-radius:44px;overflow:hidden;
+  background:radial-gradient(130% 50% at 50% -4%,rgba(0,205,200,.22),rgba(0,205,200,0) 62%),radial-gradient(55% 22% at 12% 46%,rgba(0,205,200,.16),transparent 72%),radial-gradient(45% 20% at 92% 58%,rgba(255,228,0,.12),transparent 72%),radial-gradient(60% 24% at 30% 92%,rgba(127,232,229,.14),transparent 72%),#f6f8f8}
+.sb{position:absolute;inset:0 0 auto;height:50px;display:flex;justify-content:space-between;align-items:center;padding:0 30px;font:600 15px var(--num);direction:ltr;z-index:3}
+.di{position:absolute;left:50%;top:11px;transform:translateX(-50%);width:120px;height:34px;border-radius:20px;background:#000}
+.bt{width:25px;height:12px;border-radius:4px;border:1.5px solid #0b0f10;position:relative}.bt::after{content:"";position:absolute;inset:1.5px;width:70%;border-radius:2px;background:#0b0f10}
+.v{position:absolute;inset:0;padding:96px 24px 34px;display:flex;flex-direction:column;transition:opacity .28s,transform .28s}
+.v[hidden]{display:flex!important;opacity:0;transform:translateX(-24px);pointer-events:none}
+.wm{height:30px;width:auto;align-self:flex-start;margin-bottom:34px}
+h1{margin:0;font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+.sub{margin:10px 0 0;font-size:15px;line-height:1.45;color:var(--mut);max-width:30ch}
+.fld{margin-top:28px;background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(10,30,30,.04),0 12px 26px -18px rgba(10,40,40,.25);padding:12px 16px 10px;border:1.5px solid transparent;transition:border-color .2s}
+.fld:focus-within{border-color:var(--tq)}
+.fld label{display:block;font-size:12px;color:var(--mut);margin-bottom:2px}
+.fld input{width:100%;border:0;outline:0;background:none;font:600 22px var(--num);letter-spacing:.5px;color:var(--ink);direction:ltr;text-align:right;padding:2px 0}
+.fld input::placeholder{color:#b9c2c3;font-weight:500}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:54px;border-radius:12px;border:0;font:700 16px var(--f);cursor:pointer;width:100%}
+.btn.p{background:var(--tq);color:var(--ink);margin-top:14px;box-shadow:0 10px 22px -14px rgba(0,150,146,.9)}
+.btn.p:active{transform:scale(.985)}
+.btn.s{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn svg{width:18px;height:18px}
+.or{display:flex;align-items:center;gap:12px;margin:26px 0 18px;color:#9aa4a6;font-size:13px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.gcap{margin:10px 4px 0;text-align:center;font-size:12.5px;color:var(--mut);line-height:1.4}
+.legal{margin-top:auto;text-align:center;font-size:11.5px;color:#9aa4a6;line-height:1.5}
+.legal u{text-underline-offset:2px}
+.back{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 1px var(--line);cursor:pointer;margin-bottom:26px;border:0}
+.back svg{width:18px;height:18px}
+.otp{display:flex;gap:10px;justify-content:center;margin-top:30px;direction:ltr}
+.otp span{width:60px;height:68px;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(10,30,30,.04),0 10px 22px -16px rgba(10,40,40,.3);display:grid;place-items:center;font:600 28px var(--num);border:1.5px solid transparent;transition:border-color .2s,transform .2s}
+.otp span.cur{border-color:var(--tq)}
+.otp span.f{transform:translateY(-2px)}
+.auto{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:16px;font-size:13px;color:var(--tq-d);min-height:20px}
+.resend{margin-top:10px;text-align:center;font-size:13px;color:var(--mut)}
+.ok{width:76px;height:76px;border-radius:50%;background:var(--tq);display:grid;place-items:center;margin:40px auto 22px;box-shadow:0 18px 30px -18px rgba(0,150,146,.9)}
+.ok svg{width:36px;height:36px}
+.v.done{align-items:stretch;text-align:center}
+.v.done .sub{margin-inline:auto}
+.cars{margin-top:26px;background:#fff;border-radius:20px;padding:6px 16px;box-shadow:0 1px 2px rgba(10,30,30,.04),0 12px 26px -18px rgba(10,40,40,.25);text-align:right}
+.car{display:flex;align-items:center;gap:12px;padding:10px 0}.car + .car{border-top:1px solid #eef1f1}
+.car img{width:74px;height:40px;object-fit:contain;transform:scaleX(-1)}
+.car span{display:grid;gap:1px;flex:1}.car b{font-size:15px}.car small{font-size:12.5px;color:var(--mut)}
+.pl{font:700 11.5px/20px var(--num);letter-spacing:.5px;background:#FFE400;border-radius:4px;padding:0 7px;box-shadow:inset 0 0 0 1.2px rgba(0,0,0,.7);direction:ltr}
+.v.done .btn.p{margin-top:auto}
+@media (prefers-reduced-motion:reduce){.v{transition:none}}
+</style>
+</head>
+<body>
+<div class="bar"><span class="ttl">freesbe · גרסה C<small>כניסה · לקוח עם מספר טלפון, או אורח</small></span>
+  <nav class="pchips" aria-label="פרסונה"><a class="on">כניסה</a><a href="fh-c-daniel.html">רכב חשמלי</a><a href="fh-c-home.html">רק עמדה בבית</a><a href="fh-c-charge.html">אין כלום, רוצה להטעין</a></nav></div>
+<div class="stage"><div class="phone"><div class="screen">
+  <div class="sb"><span>9:41</span><span class="di"></span><span class="bt"></span></div>
+
+  <section class="v" id="v1">
+    <img class="wm" src="img/freesbe-wordmark.svg" alt="freesbe">
+    <h1>היי, טוב לראות אותך</h1>
+    <p class="sub">לקוחות freesbe נכנסים עם מספר הטלפון. נשלח קוד אימות ב-SMS.</p>
+    <div class="fld"><label for="ph">מספר טלפון</label><input id="ph" type="tel" inputmode="tel" placeholder="050-000-0000" autocomplete="tel"></div>
+    <button class="btn p" id="send">לשלוח קוד</button>
+    <div class="or">או</div>
+    <a class="btn s" href="fh-c-charge.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="#00CDC8"/></svg>להמשיך כאורח</a>
+    <p class="legal">בהמשך את/ה מאשר/ת את <u>תנאי השימוש</u> ו<u>מדיניות הפרטיות</u></p>
+  </section>
+
+  <section class="v" id="v2" hidden>
+    <button class="back" id="b2" aria-label="חזרה"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <h1>מה הקוד?</h1>
+    <p class="sub">שלחנו קוד בן 4 ספרות ל-<bdi id="ph2">050-123-4567</bdi></p>
+    <div class="otp" id="otp"><span class="cur"></span><span></span><span></span><span></span></div>
+    <div class="auto" id="auto"></div>
+    <p class="resend">לא הגיע? אפשר לשלוח שוב בעוד <bdi>0:24</bdi></p>
+  </section>
+
+  <section class="v done" id="v3" hidden>
+    <div class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0b0f10" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h1>מצאנו אותך, גיא</h1>
+    <p class="sub">אלה הרכבים והעמדות שרשומים על שמך ב-freesbe</p>
+    <div class="cars">
+      <div class="car"><img src="img/g6-side.webp" alt=""><span><b>XPeng G6</b><small>הרכב שלך</small></span><span class="pl">412-87-603</span></div>
+      <div class="car"><img src="img/tiggo-side-clean.webp" alt=""><span><b>Tiggo 7 PHEV</b><small>של מיכל</small></span><span class="pl">238-51-904</span></div>
+    </div>
+    <a class="btn p" href="fh-c-daniel.html">כניסה לאפליקציה</a>
+  </section>
+</div></div></div>
+<script>
+(function(){
+  var v1=document.getElementById('v1'), v2=document.getElementById('v2'), v3=document.getElementById('v3'), ph=document.getElementById('ph'), t;
+  function show(a,b){ a.hidden=true; b.hidden=false; }
+  ph.addEventListener('input',function(){ var d=ph.value.replace(/\D/g,'').slice(0,10); ph.value=d.length>6?d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6):d.length>3?d.slice(0,3)+'-'+d.slice(3):d; });
+  document.getElementById('send').addEventListener('click',function(){
+    if(ph.value.replace(/\D/g,'').length<10) ph.value='050-123-4567';
+    document.getElementById('ph2').textContent=ph.value; show(v1,v2);
+    var boxes=[].slice.call(document.querySelectorAll('#otp span')), code='4821', i=0, auto=document.getElementById('auto');
+    boxes.forEach(function(b){ b.textContent=''; b.className=''; }); boxes[0].className='cur'; auto.textContent='';
+    clearTimeout(t); t=setTimeout(function step(){
+      if(i===0) auto.textContent='הקוד הגיע ב-SMS ומולא אוטומטית';
+      boxes[i].textContent=code[i]; boxes[i].className='f'; i++;
+      if(i<4){ boxes[i].className='cur'; t=setTimeout(step,170); } else t=setTimeout(function(){ location.href='fh-c-daniel.html'; },650); // 25.11: 'מצאנו אותך' step removed for now
+    },900);
+  });
+  document.getElementById('b2').addEventListener('click',function(){ clearTimeout(t); show(v2,v1); });
+})();
+</script>
+</body>
+</html>
