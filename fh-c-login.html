@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}
 .pchips a{font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;opacity:.75}
 .pchips a.on{background:#fff;opacity:1;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .stage{display:grid;place-items:center;padding:18px 16px 28px}
-.phone{width:390px;max-width:100%;aspect-ratio:390/844;border-radius:54px;background:#0b0f10;padding:11px;box-shadow:0 30px 60px -30px rgba(0,40,40,.45)}
+.phone{width:390px;max-width:none;aspect-ratio:390/844;transform-origin:top center;border-radius:54px;background:#0b0f10;padding:11px;box-shadow:0 30px 60px -30px rgba(0,40,40,.45)}
 .screen{position:relative;height:100%;border-radius:44px;overflow:hidden;
   background:radial-gradient(130% 50% at 50% -4%,rgba(0,205,200,.22),rgba(0,205,200,0) 62%),radial-gradient(55% 22% at 12% 46%,rgba(0,205,200,.16),transparent 72%),radial-gradient(45% 20% at 92% 58%,rgba(255,228,0,.12),transparent 72%),radial-gradient(60% 24% at 30% 92%,rgba(127,232,229,.14),transparent 72%),#f6f8f8}
 .sb{position:absolute;inset:0 0 auto;height:50px;display:flex;justify-content:space-between;align-items:center;padding:0 30px;font:600 15px var(--num);direction:ltr;z-index:3}
@@ -123,5 +123,8 @@ h1{margin:0;font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1
   document.getElementById('b2').addEventListener('click',function(){ clearTimeout(t); show(v2,v1); });
 })();
 </script>
+<script>(function(){ var ph=document.querySelector('.phone'), st=ph.parentElement;
+function fit(){ var k=Math.min(1,(innerHeight-130)/844,(innerWidth-24)/390); ph.style.transform='scale('+k+')'; ph.style.marginBottom=(844*(k-1))+'px'; }
+fit(); addEventListener('resize',fit); })();</script>
 </body>
 </html>
