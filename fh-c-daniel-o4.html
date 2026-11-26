@@ -3266,6 +3266,22 @@ body[data-card] .cc.v5.hcc.run .cqa .q.qchg.qchg{background:#0b0f10!important;bo
 .osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
 .osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 </style><style>
+.osw{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(11,15,16,.06);margin-inline-start:12px;vertical-align:middle}
+.osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
+.osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+</style><style>
+.osw{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(11,15,16,.06);margin-inline-start:12px;vertical-align:middle}
+.osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
+.osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+</style><style>
+.osw{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(11,15,16,.06);margin-inline-start:12px;vertical-align:middle}
+.osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
+.osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+</style><style>
+.osw{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(11,15,16,.06);margin-inline-start:12px;vertical-align:middle}
+.osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
+.osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+</style><style>
 /* Option "2" (o4) · the car, charging — a big scene of the car plugged in, turquoise light running along the
    cable; the car card below carries the numbers, status and actions (no second picture). Clay icons. */
 body[data-skin="o4"] .scr[data-k="home"] .screen{background:radial-gradient(90% 34% at 30% 26%,rgba(0,205,200,.20),rgba(0,205,200,0) 70%),radial-gradient(60% 22% at 92% 34%,rgba(255,228,0,.16),rgba(255,228,0,0) 70%),linear-gradient(180deg,#f6fafa 0%,#eef6f5 100%)!important}
@@ -3694,6 +3710,39 @@ body[data-var="b"] .svcb .svcgo.o4round,body[data-var="b"] .o4db.o4round{width:4
 body[data-var="b"] .o4db.o4round{width:36px!important;height:36px!important}
 body[data-var="b"] .o4round svg{width:18px;height:18px}
 body[data-var="b"] .o4db.o4round.done{background:#e6eeed!important;color:#5b6668!important}
+/* ---- battery status: shared ---- */
+.o4tick,.o4in,.o4target{display:none}
+/* ---- version א: pattern 1 (Tesla) ---- */
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4row{display:grid!important;grid-template-columns:auto 1fr;grid-template-areas:"p r" "b b" "s s";align-items:end!important;row-gap:8px;column-gap:12px}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt{display:contents!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4row > .v5p{grid-area:p;align-self:end!important;font-size:40px!important;font-weight:600!important;line-height:.9!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt .v5r{grid-area:r;justify-self:end!important;align-self:end!important;margin-bottom:4px!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt .v5bar{grid-area:b;height:6px!important;position:relative!important;overflow:visible!important;border-radius:6px!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt .v5bar i{border-radius:6px!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4tick{display:block;position:absolute;top:-4px;bottom:-4px;right:80%;width:2px;border-radius:2px;background:#0b0f10;opacity:.3}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt .ccs2,body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4target{grid-area:s}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c:not(.charging) .o4target{display:block;font-size:12px;color:#5b6668}
+/* ---- version ב: pattern 8 (thick bar, info inside) ---- */
+body[data-var="b"] .cc.v5.o4c .o4row{display:block!important}
+body[data-var="b"] .cc.v5.o4c .o4row > .v5p,body[data-var="b"] .cc.v5.o4c .o4rt .v5r{display:none!important}
+body[data-var="b"] .cc.v5.o4c .o4rt{top:0!important;padding-top:0!important;gap:8px!important}
+body[data-var="b"] .cc.v5.o4c .o4rt .v5bar{height:32px!important;border-radius:12px!important;position:relative!important;overflow:hidden!important}
+body[data-var="b"] .cc.v5.o4c .o4rt .v5bar i{border-radius:12px!important;height:100%!important}
+body[data-var="b"] .cc.v5.o4c .o4in{display:flex;position:absolute;inset:0;align-items:center;justify-content:space-between;padding:0 12px;direction:rtl;pointer-events:none}
+body[data-var="b"] .cc.v5.o4c .o4in b{display:inline-flex;align-items:center;gap:5px;color:#fff;font:700 16px -apple-system,"SF Pro Display",system-ui,sans-serif}
+body[data-var="b"] .cc.v5.o4c .o4in b svg{width:14px;height:14px;display:none}
+body[data-var="b"] .cc.v5.o4c.charging .o4in b svg{display:block}
+body[data-var="b"] .cc.v5.o4c .o4in small{font-size:12.5px;font-weight:600;color:#3d4749}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4row > .v5p{grid-area:p!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt > .v5r{grid-area:r!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt > .v5bar{grid-area:b!important;width:100%!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt > .ccs2,body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt > .o4target{grid-area:s!important}
+/* 26.11: bolt = same size and same vertical line as the round arrow in the alert above */
+.o4bolt,.o4bolt.on{width:40px!important;height:40px!important;left:29px!important;top:85px!important}
+.o4bolt svg{width:18px!important;height:18px!important}
+/* 26.11: target label hugs the bar */
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4row{row-gap:6px!important}
+body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4target,body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .o4rt > .ccs2{margin-top:-2px!important;line-height:1.2!important}
 
 </style></head><body class="proto" data-skin="o4"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="s-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
@@ -4227,5 +4276,13 @@ document.querySelectorAll('.hcw').forEach(function(c){ var b=c.querySelector('.h
   home.querySelectorAll('.o4due-box .o4dr .o4db').forEach(function(b){ var r=b.closest('.o4dr'), lab=b.textContent.trim(); b.setAttribute('aria-label',lab); b.innerHTML=AR; b.classList.add('o4round');
     var s=r.querySelector('small'); if(r.dataset.k==='svc') s.innerHTML='לקבוע עד <bdi>1.1</bdi> · בעוד 36 יום'; if(r.dataset.k==='test') s.innerHTML='לקבוע עד <bdi>14.3.2027</bdi>'; if(r.dataset.k==='ins') s.textContent='הביטוח לא דרך freesbe? להגדיר מתי מסתיים'; });
 })();
+// 26.11: battery status from the refs board — version א = pattern 1 (Tesla: big %, range opposite, thin bar with an 80% target tick),
+// version ב = pattern 8 (thick bar with % + range riding inside it, bolt while charging).
+(function(){ var home=document.querySelector('.scr[data-k="home"]'); if(!home) return;
+  var BOLT='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg>';
+  home.querySelectorAll('.cc.v5.o4c').forEach(function(car){ var bar=car.querySelector('.v5bar'), rt=car.querySelector('.o4rt'); if(!bar||bar.querySelector('.o4tick')) return;
+    var p=car.querySelector('.v5p'), pct=(p.firstChild&&p.firstChild.textContent||'').trim(), rng=(car.querySelector('.v5r b')||{}).textContent||'';
+    bar.insertAdjacentHTML('beforeend','<em class="o4tick" title="יעד טעינה 80%"></em><span class="o4in"><b>'+BOLT+'<bdi>'+pct+'%</bdi></b><small>'+rng+'</small></span>');
+    if(rt) rt.insertAdjacentHTML('beforeend','<small class="o4target">יעד טעינה 80%</small>'); }); })();
 
 </script></body></html>
