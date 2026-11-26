@@ -3258,6 +3258,14 @@ body[data-card] .cc.v5.hcc.run .cqa .q.qchg.qchg{background:#0b0f10!important;bo
 .osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
 .osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 </style><style>
+.osw{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(11,15,16,.06);margin-inline-start:12px;vertical-align:middle}
+.osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
+.osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+</style><style>
+.osw{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(11,15,16,.06);margin-inline-start:12px;vertical-align:middle}
+.osw a{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#4a5557;text-decoration:none;white-space:nowrap}
+.osw a.on{background:#fff;color:#0b0f10;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+</style><style>
 /* Option "2" (o4) · the car, charging — a big scene of the car plugged in, turquoise light running along the
    cable; the car card below carries the numbers, status and actions (no second picture). Clay icons. */
 body[data-skin="o4"] .scr[data-k="home"] .screen{background:radial-gradient(90% 34% at 30% 26%,rgba(0,205,200,.20),rgba(0,205,200,0) 70%),radial-gradient(60% 22% at 92% 34%,rgba(255,228,0,.16),rgba(255,228,0,0) 70%),linear-gradient(180deg,#f6fafa 0%,#eef6f5 100%)!important}
@@ -3681,6 +3689,11 @@ body[data-skin="o4"]:not([data-var="b"]) .cc.v5.o4c .cqa .q b{font-size:12px!imp
 @keyframes trChgOut{0%{opacity:1}100%{opacity:0}}
 .o4hero.turning .tr-chg img{animation:trChg2 .6s cubic-bezier(.4,0,.2,1) .25s both!important}
 .o4hero.unturning .tr-chg img{animation:trChgOut .5s cubic-bezier(.4,0,.2,1) .1s forwards!important}
+/* version ב: round arrow buttons */
+body[data-var="b"] .svcb .svcgo.o4round,body[data-var="b"] .o4db.o4round{width:40px!important;height:40px!important;padding:0!important;border-radius:50%!important;background:#00bdb8!important;color:#fff!important;border:0!important;display:grid!important;place-items:center!important;flex:none;box-shadow:none!important}
+body[data-var="b"] .o4db.o4round{width:36px!important;height:36px!important}
+body[data-var="b"] .o4round svg{width:18px;height:18px}
+body[data-var="b"] .o4db.o4round.done{background:#e6eeed!important;color:#5b6668!important}
 
 </style></head><body class="proto" data-skin="o4"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="s-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
@@ -4164,7 +4177,7 @@ document.querySelectorAll('.hcw').forEach(function(c){ var b=c.querySelector('.h
     if(b.classList.contains('o4dsave')){ var v=set.querySelector('input').value.split('-'); var ir=bx.querySelector('.o4dr[data-k="ins"]');
       ir.querySelector('small').innerHTML='מסתיים ב־<bdi>'+(+v[2])+'.'+(+v[1])+'.'+v[0]+'</bdi> · נזכיר לך חודש לפני'; ir.querySelector('.o4db').textContent='לשנות'; set.hidden=true; return; }
     if(r.dataset.k==='svc') go('service');
-    else if(r.dataset.k==='test'){ b.textContent='✓ נשלח'; b.classList.add('done'); r.querySelector('small').innerHTML='נחזור אליך לתיאום · עד <bdi>14.3.2027</bdi>'; }
+    else if(r.dataset.k==='test'){ if(b.classList.contains('o4round')) b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'; else b.textContent='✓ נשלח'; b.classList.add('done'); r.querySelector('small').innerHTML='נחזור אליך לתיאום · עד <bdi>14.3.2027</bdi>'; }
     else if(r.dataset.k==='ins'){ set.hidden=!set.hidden; } });
 })();
 
@@ -4201,10 +4214,18 @@ document.querySelectorAll('.hcw').forEach(function(c){ var b=c.querySelector('.h
   new MutationObserver(place).observe(h,{childList:true}); paint(); place();
 })();
 // 26.11: troubleshooting icon without the dark tile (magnifier + big engine light), generated in Higgsfield
-(function(){ document.querySelectorAll('img[src="icons3d/troubleshoot.webp"]').forEach(function(i){ i.setAttribute('src','icons3d/troubleshoot-v2.webp'); }); })();
+(function(){ document.querySelectorAll('img[src="icons3d/troubleshoot.webp"]').forEach(function(i){ i.setAttribute('src','icons3d/troubleshoot-v3.webp'); }); })();
 // 26.11: version ב — charger cards are navigation rows: chevron to the charger page
 (function(){ if(document.body.dataset.var!=='b') return;
   document.querySelectorAll('.scr[data-k="home"] .hcs, .scr[data-k="home"] .hcw').forEach(function(c){ if(c.querySelector('.o4chev')) return;
     var s=document.createElement('span'); s.className='o4chev'; s.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'; c.appendChild(s); }); })();
+// 26.11: version ב button language = round button with an arrow; the verb moves into the text (refs board style 8)
+(function(){ if(document.body.dataset.var!=='b') return; var home=document.querySelector('.scr[data-k="home"]'); if(!home) return;
+  var AR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var g=home.querySelector('.svcb .svcgo'); if(g){ g.innerHTML=AR; g.setAttribute('aria-label','לקבוע טיפול'); g.classList.add('o4round'); }
+  var sm=home.querySelector('.svcb .svct small'); if(sm) sm.innerHTML='XPeng G6 · לקבוע עד <bdi>1.1</bdi>';
+  home.querySelectorAll('.o4due-box .o4dr .o4db').forEach(function(b){ var r=b.closest('.o4dr'), lab=b.textContent.trim(); b.setAttribute('aria-label',lab); b.innerHTML=AR; b.classList.add('o4round');
+    var s=r.querySelector('small'); if(r.dataset.k==='svc') s.innerHTML='לקבוע עד <bdi>1.1</bdi> · בעוד 36 יום'; if(r.dataset.k==='test') s.innerHTML='לקבוע עד <bdi>14.3.2027</bdi>'; if(r.dataset.k==='ins') s.textContent='הביטוח לא דרך freesbe? להגדיר מתי מסתיים'; });
+})();
 
 </script></body></html>
